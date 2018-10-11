@@ -1,2 +1,1 @@
-def sonic_how_many_rings_did_you_get(i):
- return sum([1 if (c in "qQeRoOpPadDgb069") else 2 if(c in 'B8') else 0 for c in i])
+sonic_how_many_rings_did_you_get=lambda i:sum([(c in'qQeRoOpPadDgb069')+2*(c in'B8')for c in i])
