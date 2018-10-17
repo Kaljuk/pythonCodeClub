@@ -33,14 +33,15 @@ class TicTacToe():
         self.state = tie if tie else state
 
     def add_move(self, row, col, player):
-        self.field[row][col] = player if (self.field[row][col] == '') else self.field[row][col]
-        self.checkState()
+        self.field[row][col] = player
+        
 
     # 0 - Player with O's won
     # 1 - Player with X's won
     # 2 - It is a tie 
     # 3 - Game is still unfinished
     def get_state(self):
+        self.checkState()
         return self.state
 
     def showField(self):
