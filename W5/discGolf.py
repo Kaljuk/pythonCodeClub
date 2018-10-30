@@ -1,8 +1,19 @@
+# Teeing order on all subsequent holes is determined by the scores on the previous hole, with the lowest score throwing first, and so on. If the previous hole was a tie, the scores are to be counted back until the order is resolved.
 
 
-def order_discgolfers(scores):
-    scores.sort(ley=lambda x: x)
+def order_discgolfers(rounds):
+    newOrder = []
+    for round in list(reversed(rounds)):
+        m = min(round.keys(), key=lambda x: round[x])
+        print m
+        
+        for p in round:
+            print(p, round[p])
 
+        if (len(newOrder) >= len(round)): break
+    
+    return newOrder
+    
 
 scores = [{
     'bob': 3,
@@ -22,4 +33,5 @@ scores = [{
     'squidward': 3,
 }]
 
-order_discgolfers(scores)
+print(order_discgolfers(scores))
+print(['squidward', 'patric', 'bob'])
